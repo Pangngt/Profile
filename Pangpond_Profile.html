@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Pangpond — Profile</title>
+		<style>
+			:root{--bg:#f5f7fb;--card:#ffffff;--muted:#667088;--accent:#2563eb}
+			body{font-family:Inter, system-ui, Arial, sans-serif;background:var(--bg);color:#0b1220;margin:0;padding:24px}
+			.container{max-width:900px;margin:0 auto}
+			.profile{display:flex;gap:24px;align-items:center;background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(11,18,32,0.06)}
+			.avatar{width:160px;height:160px;border-radius:12px;overflow:hidden;flex:0 0 160px}
+			.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+			.headline{flex:1}
+			h1{margin:0 0 6px;font-size:26px}
+			p.lead{margin:0;color:var(--muted)}
+			.meta{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+			.chip{background:#eef4ff;color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px}
+
+			section{margin-top:18px}
+			.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(11,18,32,0.04)}
+			h2{margin:0 0 12px;font-size:18px}
+			ul{margin:0;padding-left:18px}
+			.skills{display:flex;flex-wrap:wrap;gap:8px}
+			.skill{background:#f0f7ef;color:#0a6b2c;padding:6px 10px;border-radius:8px;font-weight:600;font-size:13px}
+
+			.projects{display:flex;flex-direction:column;gap:12px}
+			.project{border-left:3px solid var(--accent);padding:10px 14px;background:#fff;border-radius:8px}
+			.project h3{margin:0;font-size:16px}
+			.project p{margin:6px 0;color:var(--muted)}
+
+			.contact-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+			.contact-item{display:flex;gap:8px;align-items:center}
+
+			.comments-list{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+			.comment{background:#fbfcff;border-radius:8px;padding:10px;border:1px solid #eef2ff}
+
+			form input, form textarea{width:100%;padding:10px;border:1px solid #e6eefc;border-radius:8px}
+			form button{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
+
+			@media (max-width:700px){.profile{flex-direction:column;align-items:flex-start}.avatar{width:120px;height:120px}}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="profile">
+				<div class="avatar" aria-hidden="true">
+					<!-- Replace src with your profile picture file name (e.g., "profile.jpg") -->
+					<img src="https://via.placeholder.com/320x320.png?text=Profile" alt="Pangpond profile picture" />
+				</div>
+				<div class="headline">
+					<h1>Pangpond (Your Full Name)</h1>
+					<p class="lead">Front-end Developer • Passionate about building beautiful, accessible web apps</p>
+					<div class="meta">
+						<span class="chip">Based in: Bangkok, Thailand</span>
+						<span class="chip">Open to work</span>
+					</div>
+				</div>
+			</div>
+
+			<section>
+				<div class="card">
+					<h2>Education</h2>
+					<ul>
+						<li><strong>Bachelor of Science in Computer Science</strong>, Chulalongkorn University — 2018–2022</li>
+						<li><strong>Certificate:</strong> Responsive Web Design, FreeCodeCamp — 2021</li>
+					</ul>
+				</div>
+			</section>
+
+			<section>
+				<div class="card">
+					<h2>Skills</h2>
+					<div class="skills">
+						<span class="skill">HTML</span>
+						<span class="skill">CSS / SCSS</span>
+						<span class="skill">JavaScript</span>
+						<span class="skill">React</span>
+						<span class="skill">TypeScript</span>
+						<span class="skill">Git</span>
+						<span class="skill">Accessibility</span>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="card">
+					<h2>Project Experiences</h2>
+					<div class="projects">
+						<article class="project">
+							<h3>Portfolio Website</h3>
+							<p>Designed and built a responsive portfolio site using React and CSS Modules. Implemented accessible components and optimized images for performance.</p>
+							<p style="margin:0"><strong>Role:</strong> Front-end • <strong>Tech:</strong> React, Vite, CSS</p>
+						</article>
+
+						<article class="project">
+							<h3>Task Manager App</h3>
+							<p>Single-page app for task management with drag-and-drop, local persistence, and unit tests.</p>
+							<p style="margin:0"><strong>Role:</strong> Full-stack (front-end focus) • <strong>Tech:</strong> TypeScript, Node.js, Express</p>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="card">
+					<h2>Contact</h2>
+					<div class="contact-list">
+						<div class="contact-item"><strong>Email:</strong>&nbsp;<a href="mailto:pangpond@example.com">pangpond@example.com</a></div>
+						<div class="contact-item"><strong>Phone:</strong>&nbsp;<a href="tel:+66123456789">+66 12 345 6789</a></div>
+						<div class="contact-item"><strong>LinkedIn:</strong>&nbsp;<a href="#">linkedin.com/in/pangpond</a></div>
+						<div class="contact-item"><strong>GitHub:</strong>&nbsp;<a href="#">github.com/pangpond</a></div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="card">
+					<h2>Comments</h2>
+					<form id="commentForm">
+						<label for="name">Name</label>
+						<input id="name" name="name" placeholder="Your name" required />
+						<label for="comment" style="margin-top:8px;display:block">Comment</label>
+						<textarea id="comment" name="comment" rows="3" placeholder="Write a short comment" required></textarea>
+						<div style="margin-top:8px;display:flex;gap:8px">
+							<button type="submit">Post Comment</button>
+							<button type="button" id="clearComments" style="background:#e6eefc;color:var(--accent)">Clear</button>
+						</div>
+					</form>
+
+					<div class="comments-list" id="commentsList" aria-live="polite"></div>
+				</div>
+			</section>
+		</div>
+
+		<script>
+			// Simple client-side comments (stored in sessionStorage)
+			const form = document.getElementById('commentForm');
+			const commentsList = document.getElementById('commentsList');
+			const storageKey = 'pangpond_profile_comments_v1';
+
+			function renderComments(){
+				const items = JSON.parse(sessionStorage.getItem(storageKey) || '[]');
+				commentsList.innerHTML = items.map(c => `\n          <div class="comment">\n            <strong>${escapeHtml(c.name)}</strong> <small style="color:var(--muted);margin-left:8px">${new Date(c.ts).toLocaleString()}</small>\n            <div style="margin-top:6px">${escapeHtml(c.text)}</div>\n          </div>\n        `).join('');
+			}
+
+			function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;" }[c])) }
+
+			form.addEventListener('submit', e =>{
+				e.preventDefault();
+				const name = form.name.value.trim();
+				const text = form.comment.value.trim();
+				if(!name || !text) return;
+				const items = JSON.parse(sessionStorage.getItem(storageKey) || '[]');
+				items.unshift({name,text,ts:Date.now()});
+				sessionStorage.setItem(storageKey, JSON.stringify(items));
+				form.reset();
+				renderComments();
+			});
+
+			document.getElementById('clearComments').addEventListener('click', ()=>{
+				if(confirm('Clear all comments?')){ sessionStorage.removeItem(storageKey); renderComments(); }
+			});
+
+			// initial render
+			renderComments();
+		</script>
+	</body>
+</html>
+
